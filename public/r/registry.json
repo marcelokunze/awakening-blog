@@ -1,0 +1,64 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "mdx-blog",
+  "homepage": "https://github.com/marcelokunze/mdx-blog",
+  "items": [
+    {
+      "name": "blog",
+      "type": "registry:block",
+      "title": "MDX Blog",
+      "description": "A complete MDX blog with automatic table of contents, category badges, and shadcn/ui components. Features include: MDX with frontmatter, auto-generated ToC with scroll spy, responsive design, dark mode support, and SEO-ready schema markup.",
+      "dependencies": ["next-mdx-remote", "gray-matter"],
+      "devDependencies": ["@tailwindcss/typography"],
+      "registryDependencies": ["avatar", "badge", "card"],
+      "files": [
+        {
+          "path": "registry/blog/app/blog/layout.tsx",
+          "type": "registry:page",
+          "target": "app/blog/layout.tsx"
+        },
+        {
+          "path": "registry/blog/app/blog/page.tsx",
+          "type": "registry:page",
+          "target": "app/blog/page.tsx"
+        },
+        {
+          "path": "registry/blog/app/blog/[slug]/page.tsx",
+          "type": "registry:page",
+          "target": "app/blog/[slug]/page.tsx"
+        },
+        {
+          "path": "registry/blog/lib/mdx.ts",
+          "type": "registry:lib",
+          "target": "lib/mdx.ts"
+        },
+        {
+          "path": "registry/blog/lib/mdx-components.tsx",
+          "type": "registry:lib",
+          "target": "lib/mdx-components.tsx"
+        },
+        {
+          "path": "registry/blog/components/table-of-contents.tsx",
+          "type": "registry:component",
+          "target": "components/table-of-contents.tsx"
+        },
+        {
+          "path": "registry/blog/components/blog-card.tsx",
+          "type": "registry:component",
+          "target": "components/blog-card.tsx"
+        },
+        {
+          "path": "registry/blog/components/category-badge.tsx",
+          "type": "registry:component",
+          "target": "components/category-badge.tsx"
+        },
+        {
+          "path": "registry/blog/components/blog-schema.tsx",
+          "type": "registry:component",
+          "target": "components/blog-schema.tsx"
+        }
+      ]
+    }
+  ]
+}
+

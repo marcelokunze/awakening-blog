@@ -1,0 +1,64 @@
+---
+title: 'Getting Started with Your New Blog'
+date: 'January 1st, 2025'
+tldr: 'This is an example blog post to help you get started with your new MDX blog. Learn about frontmatter, components, and styling.'
+author: 'Your Name'
+authorImage: '/authors/default.png'
+readingTime: '3 min read'
+category: 'Tutorial'
+description: 'A quick guide to writing your first blog post with MDX and shadcn/ui components.'
+---
+
+## Welcome to Your Blog
+
+This is an example post to help you understand how the MDX blog works. You can delete this file once you're ready to write your own content.
+
+## Writing in MDX
+
+MDX allows you to write JSX directly in your markdown files. This means you can use React components alongside your regular markdown content.
+
+### Frontmatter
+
+Every post needs frontmatter at the top. Here are the available fields:
+
+- `title` - The title of your post
+- `date` - Publication date (e.g., "January 1st, 2025")
+- `tldr` - A short summary shown at the top of the post
+- `author` - Author name
+- `authorImage` - Path to author avatar image
+- `readingTime` - Estimated reading time
+- `category` - Post category (Tutorial, Guide, News, Opinion, or General)
+- `description` - Meta description for SEO
+
+### Using Images
+
+You can use the Next.js Image component directly in your MDX:
+
+```jsx
+<Image 
+  src="/path/to/image.jpg"
+  alt="Description"
+  width={800}
+  height={600}
+  className="rounded-lg"
+/>
+```
+
+## Table of Contents
+
+The table of contents is automatically generated from your h2 headings. Each heading gets an anchor link, and the ToC highlights the current section as you scroll.
+
+## Styling
+
+The blog uses Tailwind CSS Typography plugin for beautiful prose styling. Both light and dark modes are supported out of the box.
+
+## Next Steps
+
+1. Create a `/posts` directory in your project root
+2. Add your MDX files there
+3. Customize the category colors in `components/category-badge.tsx`
+4. Update the metadata in `app/blog/page.tsx`
+5. Add your author images to `/public/authors/`
+
+Happy writing! 🎉
+
