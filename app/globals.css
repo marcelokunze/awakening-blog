@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: Inter;
+    --font-host: 'Host Grotesk', sans-serif;
+    --background: 0 0% 100%;
+    --body-blog: 215 13.8% 34.1%;
+    --heading-blog: 215 27.9% 16.9%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 220 14.3% 95.9% / 0.5;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 225 51% 34% / 0.5;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --selection-background: 225 37% 86%;
+    --selection-text: 225 51% 34%;
+    --accentblue: 230 67% 41%;
+
+    /* Inverted zinc shade scale (light mode) */
+    --shade-50:  240 10% 3.9%;
+    --shade-20:  240 10% 3.9%;
+    --shade-100: 240 5.9% 10%;
+    --shade-200: 240 3.7% 15.9%;
+    --shade-300: 240 5.3% 26.1%;
+    --shade-400: 240 5.2% 33.9%;
+    --shade-500: 240 3.8% 46.1%;
+    --shade-600: 240 5%   64.9%;
+    --shade-700: 240 4.9% 83.9%;
+    --shade-800: 240 5.9% 90%;
+    --shade-900: 240 4.8% 95.9%;
+    --shade-950: 0 0%   98%;
+  }
+
+  .dark {
+    --font-sans: Inter;
+    --font-host: 'Host Grotesk', sans-serif;
+    --background: 0 0% 0%;
+    --body-blog: 217.9 10.6% 75%;
+    --heading-blog: 220 13% 91%;
+    --foreground: 210 20% 98%;
+    --card: 220.9 39.3% 11% / 0.5;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 225 51% 66% / 0.5;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --selection-background: 225 37% 14%;
+    --selection-text: 225 51% 66%;
+    --accentblue: 230 100% 75%;
+
+    /* Zinc shade scale (dark mode) */
+    --shade-50:  0 0%   98%;
+    --shade-100: 240 4.8% 95.9%;
+    --shade-200: 240 5.9% 90%;
+    --shade-300: 240 4.9% 83.9%;
+    --shade-400: 240 5%   64.9%;
+    --shade-500: 240 3.8% 46.1%;
+    --shade-600: 240 5.2% 33.9%;
+    --shade-700: 240 5.3% 26.1%;
+    --shade-800: 240 3.7% 15.9%;
+    --shade-900: 240 5.9% 10%;
+    --shade-920: 0   0%   5.5%;
+    --shade-950: 240 10% 3.9%;
+  }
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::selection {
+    background-color: hsl(var(--selection-background));
+    color: hsl(var(--selection-text));
+  }
+}
+
+@layer components {
+  .custom-gradient {
+    background: radial-gradient(circle,
+        rgb(255 255 255 / 0.7) 10%,
+        rgb(255 255 255 / 0.5) 20%,
+        rgb(255 255 255 / 0.3) 30%,
+        rgb(255 255 255 / 0.1) 40%,
+        rgb(255 255 255 / 0.05) 50%,
+        rgb(255 255 255 / 0.02) 60%,
+        transparent 75%);
+  }
+}

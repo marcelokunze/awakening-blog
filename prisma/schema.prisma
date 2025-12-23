@@ -1,0 +1,113 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Profile {
+  id                          String                @id @db.Uuid
+  email                       String                @unique
+  current_tier                SubscriptionTierType  @default(free)
+  pending_tier                SubscriptionTierType?
+  last_reset                  DateTime              @default(now()) @db.Timestamptz(6)
+  meditation_credits_used     Int                   @default(0)
+  tier_effective_date         DateTime              @default(now())
+  created_at                  DateTime              @default(now()) @db.Timestamptz(6)
+  updated_at                  DateTime              @updatedAt @db.Timestamptz(6)
+  total_meditations_generated Int                   @default(0)
+  stripe_customer_id          String?               @unique
+  meditations                 Meditation[]
+
+  @@index([last_reset])
+  @@map("profiles")
+}
+
+model Meditation {
+  id               String           @id @default(uuid()) @db.Uuid
+  user_id          String           @db.Uuid
+  created_at       DateTime         @default(now()) @db.Timestamptz(6)
+  duration_seconds Int
+  language_code    String
+  is_beginner      Boolean          @default(false)
+  technique        String?
+  voice_id         String?
+  background_track String?
+  script           Json?
+  storage_path     String?          @unique
+  plays            Int              @default(0)
+  completed_at     DateTime?        @db.Timestamptz(6)
+  error_message    String?
+  status           MeditationStatus @default(pending)
+  purpose          String
+  description      String?
+  title            String?
+  profile          Profile          @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([user_id, created_at])
+  @@map("meditations")
+}
+
+model SubscriptionTier {
+  id              String               @id @default(uuid()) @db.Uuid
+  name            SubscriptionTierType @unique
+  max_duration    Int
+  monthly_price   Float
+  monthly_credits Int
+
+  @@map("subscription_tiers")
+}
+
+model Voice {
+  id               String               @id @default(uuid()) @db.Uuid
+  voice_id         String               @unique
+  name             String
+  speed            Float
+  tier             SubscriptionTierType
+  languages        String[]
+  gender           Gender
+  labels           String[]
+  accent           String?
+sortOrder        Int                  @default(0)
+  created_at       DateTime             @default(now()) @db.Timestamptz(6)
+  updated_at       DateTime             @updatedAt @db.Timestamptz(6)
+  price_multiplier Float                @default(1.0)
+
+  @@map("voices")
+}
+
+model BgTrack {
+  id               String               @id @default(uuid()) @db.Uuid
+  bgtrack_id       String               @unique
+  name             String
+  tier             SubscriptionTierType
+  labels           String[]
+  preview_path     String?
+  created_at       DateTime             @default(now()) @db.Timestamptz(6)
+  updated_at       DateTime             @updatedAt @db.Timestamptz(6)
+  price_multiplier Float                @default(1.0)
+
+  @@map("bgtracks")
+}
+
+enum SubscriptionTierType {
+  free
+  starter
+  pro
+}
+
+enum MeditationStatus {
+  pending
+  processing
+  script_generated
+  completed
+  failed
+}
+
+enum Gender {
+  male
+  female
+}
