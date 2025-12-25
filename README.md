@@ -207,16 +207,6 @@ typography: {
 
 Edit CSS variables in `app/globals.css` to customize the color scheme.
 
-## Development
-
-```bash
-# Start dev server
-npm run dev
-
-# Build for production
-npm run build
-```
-
 ## License
 
 MIT License - feel free to use this for any project!
