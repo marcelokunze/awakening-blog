@@ -1,16 +1,16 @@
-# MDX Blog
+# Awakening Blog
 
 A beautiful, feature-rich MDX blog built with Next.js 15 and shadcn/ui. Features automatic table of contents with scroll spy, category badges, dark mode support, and SEO-ready schema markup.
 
 ## Features
 
-- 📝 **MDX Support** - Write posts in MDX with React components
-- 📑 **Auto Table of Contents** - Generated from headings with scroll spy
-- 🏷️ **Category Badges** - Customizable colored badges
+- 📝 **MDX Support** - Write posts in MDX
+- 🎛 **React & Shadcn Components** - Inject custom components into your articles
+- 🔍 **SEO Optimized** - Schema.org markup and meta tags
 - 🌙 **Dark Mode** - Full dark/light mode support
-- 🔍 **SEO Ready** - Schema.org markup and meta tags
 - 📱 **Responsive** - Mobile-first design
-- ⚡ **Fast** - Built on Next.js 15 with Turbopack
+- 📑 **Table of Contents** - Generated from headings with scroll spy
+- 🏷️ **Category Badges** - Customizable colored badges
 
 ## Installation
 
@@ -22,13 +22,11 @@ If you already have a Next.js project with shadcn/ui set up, install with a sing
 npx shadcn@latest add https://awakening-blog.com/r/blog.json
 ```
 
-This will automatically add:
+*This will add:*
 
 #### Dependencies
 - `next-mdx-remote` - MDX rendering
 - `gray-matter` - Frontmatter parsing
-
-#### Dev Dependencies
 - `@tailwindcss/typography` - Prose styling
 
 #### shadcn/ui Components
@@ -51,23 +49,6 @@ This will automatically add:
 
 ### After Installation
 
-1. Add the typography plugin to your `tailwind.config.ts`:
-
-```typescript
-plugins: [
-  require("@tailwindcss/typography"),
-  // ...other plugins
-],
-```
-
-2. Create a `posts/` directory in your project root
-
-3. Add your first `.mdx` post (see [Writing Posts](#writing-posts))
-
-4. Visit `/blog` to see your posts!
-
-### 🤖 AI IDE Users (Cursor, Windsurf, etc.)
-
 After running the install command, copy and paste this prompt to your AI assistant to complete the setup:
 
 ```
@@ -87,9 +68,24 @@ I just installed an MDX blog using shadcn registry. Please help me complete the 
    Add some example content with a few h2 headings to demonstrate the table of contents.
 
 4. Add a "Blog" link to my navbar that links to /blog
-
-After making these changes, start the dev server so I can preview the blog.
 ```
+
+### Or mannually follow these steps
+
+1. Add the typography plugin to your `tailwind.config.ts`:
+
+```typescript
+plugins: [
+  require("@tailwindcss/typography"),
+  // ...other plugins
+],
+```
+
+2. Create a `posts/` directory in your project root
+
+3. Add your first `.mdx` post (see [Writing Posts](#writing-posts))
+
+4. Visit `/blog` to see your posts
 
 ### Option 2: Use as a Template
 
