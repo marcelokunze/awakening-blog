@@ -9,6 +9,7 @@ const categoryStyles: Record<string, string> = {
   Guide: "bg-green-500/10 text-green-500 hover:bg-green-500/20",
   News: "bg-amber-500/10 text-amber-500 hover:bg-amber-500/20",
   Opinion: "bg-purple-500/10 text-purple-500 hover:bg-purple-500/20",
+  Origins: "bg-amber-500/10 text-amber-500 hover:bg-amber-500/20",
 }
 
 interface CategoryBadgeProps {
