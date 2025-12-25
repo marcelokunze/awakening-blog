@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "mdx-blog",
-  "homepage": "https://github.com/marcelokunze/mdx-blog",
+  "homepage": "https://awakening-blog.com",
   "items": [
     {
       "name": "blog",
