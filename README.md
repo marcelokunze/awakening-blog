@@ -49,7 +49,7 @@ This will automatically add:
 | `components/category-badge.tsx` | Category badges |
 | `components/blog-schema.tsx` | SEO schema markup |
 
-#### After Installation
+### After Installation
 
 1. Add the typography plugin to your `tailwind.config.ts`:
 
@@ -65,6 +65,31 @@ plugins: [
 3. Add your first `.mdx` post (see [Writing Posts](#writing-posts))
 
 4. Visit `/blog` to see your posts!
+
+### 🤖 AI IDE Users (Cursor, Windsurf, etc.)
+
+After running the install command, copy and paste this prompt to your AI assistant to complete the setup:
+
+```
+I just installed an MDX blog using shadcn registry. Please help me complete the setup:
+
+1. Add `require("@tailwindcss/typography")` to the plugins array in my tailwind.config.ts
+
+2. Create a `posts/` folder in my project root
+
+3. Create my first blog post at `posts/hello-world.mdx` with this frontmatter:
+   - title: "Hello World"
+   - date: today's date formatted like "January 1st, 2025"
+   - category: "General"
+   - description: "My first blog post"
+   - author: "Your Name"
+   - readingTime: "2 min read"
+   Add some example content with a few h2 headings to demonstrate the table of contents.
+
+4. Add a "Blog" link to my navbar that links to /blog
+
+After making these changes, start the dev server so I can preview the blog.
+```
 
 ### Option 2: Use as a Template
 
@@ -194,24 +219,6 @@ npm run dev
 
 # Build for production
 npm run build
-
-# Build registry (for distribution)
-npm run registry:build
-```
-
-## Publishing Your Own Registry
-
-Want to customize and share your own version?
-
-1. Fork this repository
-2. Make your customizations
-3. Deploy to Vercel/Netlify
-4. Run `npm run registry:build` to generate registry files
-5. Commit and push
-6. Others can install with:
-
-```bash
-npx shadcn@latest add https://YOUR_DOMAIN/r/blog.json
 ```
 
 ## License
