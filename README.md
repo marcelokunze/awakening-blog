@@ -2,8 +2,6 @@
 
 A beautiful, feature-rich MDX blog built with Next.js 15 and shadcn/ui. Features automatic table of contents with scroll spy, category badges, dark mode support, and SEO-ready schema markup.
 
-![Blog Screenshot](./public/screenshot.png)
-
 ## Features
 
 - 📝 **MDX Support** - Write posts in MDX with React components
@@ -16,7 +14,59 @@ A beautiful, feature-rich MDX blog built with Next.js 15 and shadcn/ui. Features
 
 ## Installation
 
-### Option 1: Use as a Template
+### Option 1: Add to Existing Project (Recommended)
+
+If you already have a Next.js project with shadcn/ui set up, install with a single command:
+
+```bash
+npx shadcn@latest add https://awakening-blog.com/r/blog.json
+```
+
+This will automatically add:
+
+#### Dependencies
+- `next-mdx-remote` - MDX rendering
+- `gray-matter` - Frontmatter parsing
+
+#### Dev Dependencies
+- `@tailwindcss/typography` - Prose styling
+
+#### shadcn/ui Components
+- `avatar` - Author avatars
+- `badge` - Category badges
+- `card` - Blog post cards
+
+#### Files
+| File | Description |
+|------|-------------|
+| `app/blog/layout.tsx` | Blog layout wrapper |
+| `app/blog/page.tsx` | Blog listing page |
+| `app/blog/[slug]/page.tsx` | Individual post page |
+| `lib/mdx.ts` | MDX parsing & ToC extraction |
+| `lib/mdx-components.tsx` | Custom MDX components |
+| `components/table-of-contents.tsx` | Scroll-spy ToC |
+| `components/blog-card.tsx` | Post preview cards |
+| `components/category-badge.tsx` | Category badges |
+| `components/blog-schema.tsx` | SEO schema markup |
+
+#### After Installation
+
+1. Add the typography plugin to your `tailwind.config.ts`:
+
+```typescript
+plugins: [
+  require("@tailwindcss/typography"),
+  // ...other plugins
+],
+```
+
+2. Create a `posts/` directory in your project root
+
+3. Add your first `.mdx` post (see [Writing Posts](#writing-posts))
+
+4. Visit `/blog` to see your posts!
+
+### Option 2: Use as a Template
 
 Click "Use this template" on GitHub to create your own repository.
 
@@ -26,25 +76,6 @@ cd YOUR_REPO
 npm install
 npm run dev
 ```
-
-### Option 2: Add to Existing Project (shadcn CLI)
-
-If you already have a Next.js project with shadcn/ui set up:
-
-```bash
-npx shadcn@latest add https://mdx-blog.vercel.app/r/blog.json
-```
-
-Then add the typography plugin to your `tailwind.config.ts`:
-
-```typescript
-plugins: [
-  require("@tailwindcss/typography"),
-  // ...other plugins
-],
-```
-
-And create a `/posts` directory in your project root.
 
 ## Writing Posts
 
@@ -65,6 +96,14 @@ description: 'Meta description for SEO.'
 ## Introduction
 
 Your content here...
+
+## Another Section
+
+More content with **bold**, *italic*, and [links](https://example.com).
+
+### Subsection
+
+The table of contents automatically picks up h2, h3, and h4 headings!
 ```
 
 ### Frontmatter Fields
@@ -72,10 +111,10 @@ Your content here...
 | Field | Required | Description |
 |-------|----------|-------------|
 | `title` | ✅ | Post title |
-| `date` | ✅ | Publication date |
+| `date` | ✅ | Publication date (e.g., "January 1st, 2025") |
 | `category` | ✅ | Post category |
 | `description` | ❌ | SEO meta description |
-| `tldr` | ❌ | Summary shown at top |
+| `tldr` | ❌ | Summary shown at top of post |
 | `author` | ❌ | Author name |
 | `authorImage` | ❌ | Path to author avatar |
 | `readingTime` | ❌ | Estimated read time |
@@ -83,19 +122,34 @@ Your content here...
 
 ### Default Categories
 
-- `General` - Default category
-- `Tutorial` - How-to guides
-- `Guide` - In-depth guides
-- `News` - Updates and news
-- `Opinion` - Opinion pieces
+| Category | Color |
+|----------|-------|
+| `General` | Slate |
+| `Tutorial` | Blue |
+| `Guide` | Green |
+| `News` | Amber |
+| `Opinion` | Purple |
+| `Origins` | Amber |
 
 Customize colors in `components/category-badge.tsx`.
 
-## Customization
+## Using Components in MDX
 
-### Adding MDX Components
+You can use React components directly in your MDX files:
 
-Edit `lib/mdx-components.tsx` to add custom components:
+```mdx
+<Image 
+  src="https://example.com/image.jpg"
+  alt="Description"
+  width={800}
+  height={600}
+  className="rounded-md"
+/>
+```
+
+### Adding Custom Components
+
+Edit `lib/mdx-components.tsx` to add your own components:
 
 ```tsx
 import { MyComponent } from '@/components/my-component'
@@ -112,6 +166,8 @@ Then use in your MDX:
 <MyComponent prop="value" />
 ```
 
+## Customization
+
 ### Styling
 
 The blog uses Tailwind CSS Typography for prose styling. Customize in `tailwind.config.ts`:
@@ -125,6 +181,10 @@ typography: {
   }
 }
 ```
+
+### Theme Colors
+
+Edit CSS variables in `app/globals.css` to customize the color scheme.
 
 ## Development
 
@@ -141,9 +201,14 @@ npm run registry:build
 
 ## Publishing Your Own Registry
 
-1. Deploy this project to Vercel/Netlify
-2. Run `npm run registry:build` to generate registry files
-3. Others can install with:
+Want to customize and share your own version?
+
+1. Fork this repository
+2. Make your customizations
+3. Deploy to Vercel/Netlify
+4. Run `npm run registry:build` to generate registry files
+5. Commit and push
+6. Others can install with:
 
 ```bash
 npx shadcn@latest add https://YOUR_DOMAIN/r/blog.json
