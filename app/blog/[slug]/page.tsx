@@ -49,10 +49,10 @@ export default async function Post({ params }: PageProps) {
   return (
     <>
       <BlogSchema post={post} slug={resolvedParams.slug} />
-      <div className="py-6 md:py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex gap-16 flex-col lg:flex-row">
-            <article className="flex-1 max-w-2xl">
+      <div className="mt-10 md:mt-0 pt-6 md:pt-16">
+        <div className="flex flex-col items-center">
+          <div className="mt-4 flex gap-32 flex-col lg:flex-row p-6 md:pl-60">
+            <article className="flex-1 max-w-xl">
               <div className="mb-8">
                 <h1 className="text-4xl font-semibold mb-6">{post.title}</h1>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-12">
@@ -68,10 +68,10 @@ export default async function Post({ params }: PageProps) {
                 {post.tldr && (
                   <>
                     <p className="text-xs font-semibold mb-4 tracking-widest text-foreground/80">SUMMARY TL;DR</p>
-                    <div className="prose prose-lg dark:prose-invert mb-12 md:mb-16">
+                    <div className="prose prose-lg dark:prose-invert mb-12 md:mb-24">
                       <p>{post.tldr}</p>
                     </div>
-                    <hr className="border-border mb-12 md:mb-16" />
+                    <hr className="border-border mb-12 md:mb-24" />
                   </>
                 )}
               </div>
