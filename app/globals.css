@@ -29,6 +29,8 @@
     --radius: 0.5rem;
     --body-blog: 215 13.8% 34.1%;
     --heading-blog: 215 27.9% 16.9%;
+    --selection: oklch(0.145 0 0);
+    --selection-foreground: oklch(1 0 0);
   }
 
   .dark {
@@ -54,6 +56,8 @@
     --ring: 225 51% 66% / 0.5;
     --body-blog: 217.9 10.6% 75%;
     --heading-blog: 220 13% 91%;
+    --selection: oklch(0.922 0 0);
+    --selection-foreground: oklch(0.205 0 0);
   }
 }
 
@@ -64,6 +68,10 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  ::selection {
+    @apply bg-selection text-selection-foreground;
   }
 }
 

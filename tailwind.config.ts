@@ -162,6 +162,10 @@ export default {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
+				selection: {
+					DEFAULT: 'var(--selection)',
+					foreground: 'var(--selection-foreground)'
+				},
 			}
 		}
 	},
