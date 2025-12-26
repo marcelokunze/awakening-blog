@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArticlePreview } from "@/components/article-preview";
 import { InstallCommand } from "@/components/install-command";
 import { PromptBox } from "@/components/prompt-box";
+import { ClosingCTA } from "@/components/closing-cta";
 
 function FeatureCard({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: string }) {
   return (
@@ -180,30 +181,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Open Source Section */}
-      <section className="container max-w-screen-xl mx-auto px-4 md:px-8 py-16 pb-24">
-        <div className="text-center max-w-2xl mx-auto">
-          <div className="flex justify-center mb-6">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-muted">
-              <Github className="h-8 w-8" />
-            </div>
-          </div>
-          <h2 className="text-3xl font-bold mb-4">Open Source</h2>
-          <p className="text-muted-foreground mb-8">
-            This project is open source and free to use. Star us on GitHub, contribute, or fork it for your own projects.
-          </p>
-          <Button size="lg" variant="outline" asChild>
-            <a
-              href="https://github.com/marcelokunze/awakening-blog"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="mr-2 h-4 w-4" />
-              View on GitHub
-            </a>
-          </Button>
-        </div>
-      </section>
+      <ClosingCTA />
 
       {/* Footer */}
       <footer className="border-t border-border py-8">

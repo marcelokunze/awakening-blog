@@ -1,32 +1,25 @@
 "use client"
 
 import Link from "next/link"
-import { Github, Moon, Sun, Copy, Check } from "lucide-react"
+import { Github, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
 
 const INSTALL_COMMAND = "npx shadcn@latest add https://awakening-blog.com/r/blog.json"
 
 export function SiteHeader() {
   const { theme, setTheme } = useTheme()
-  const [hasCopied, setHasCopied] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  useEffect(() => {
-    if (hasCopied) {
-      const timeout = setTimeout(() => setHasCopied(false), 2000)
-      return () => clearTimeout(timeout)
-    }
-  }, [hasCopied])
-
   const copyCommand = () => {
     navigator.clipboard.writeText(INSTALL_COMMAND)
-    setHasCopied(true)
+    toast.success("Install command copied to clipboard")
   }
 
   return (
@@ -110,31 +103,10 @@ export function SiteHeader() {
             {/* Main CTA */}
             <Button
               size="sm"
-              className="hidden h-[31px] gap-2 rounded-lg sm:flex"
+              className="h-[31px] rounded-lg"
               onClick={copyCommand}
             >
-              {hasCopied ? (
-                <>
-                  <Check className="size-3.5" />
-                  Copied!
-                </>
-              ) : (
-                <>
-                  <Copy className="size-3.5" />
-                  Copy Install
-                </>
-              )}
-            </Button>
-            <Button
-              size="sm"
-              className="h-[31px] rounded-lg sm:hidden"
-              onClick={copyCommand}
-            >
-              {hasCopied ? (
-                <Check className="size-3.5" />
-              ) : (
-                <Copy className="size-3.5" />
-              )}
+              Install
             </Button>
           </div>
         </div>
