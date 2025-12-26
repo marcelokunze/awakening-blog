@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BlogCard } from "@/components/blog-card";
 import { getFeaturedPosts } from "@/lib/mdx";
 import { Button } from "@/components/ui/button";
-import { Code2, Search, Moon, Github, ArrowRight } from "lucide-react";
+import { Code2, Search, Moon, ArrowRight } from "lucide-react";
 import { ArticlePreview } from "@/components/article-preview";
 import { InstallCommand } from "@/components/install-command";
 import { PromptBox } from "@/components/prompt-box";
@@ -44,14 +44,13 @@ export default async function Home() {
                   View Demo
                 </Link>
               </Button>
-              <Button size="lg" variant="secondary" className="min-w-[140px]" asChild>
+              <Button size="lg" variant="outline" className="min-w-[140px]" asChild>
                 <a
-                  href="https://github.com/marcelokunze/awakening-blog"
+                  href="https://github.com/marcelokunze/awakening-blog?tab=readme-ov-file#awakening-blog"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github className="mr-2 h-4 w-4" />
-                  GitHub
+                  Instructions
                 </a>
               </Button>
             </div>

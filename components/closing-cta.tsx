@@ -12,7 +12,7 @@ export function ClosingCTA() {
   }
 
   return (
-    <section className="container max-w-screen-xl mx-auto px-4 md:px-8 py-16 pb-24">
+    <section className="container max-w-screen-xl mx-auto px-4 md:px-8 py-32">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl font-medium mb-6">
           Install your blog structure and focus on the content.
@@ -27,7 +27,7 @@ export function ClosingCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Learn More
+              GitHub
             </a>
           </Button>
         </div>

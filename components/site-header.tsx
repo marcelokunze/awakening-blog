@@ -68,23 +68,32 @@ export function SiteHeader() {
           {/* Right Side */}
           <div className="ml-auto flex items-center gap-2">
             {/* Desktop Nav Links */}
-            <nav className="hidden md:flex items-center gap-4 text-sm mr-4">
-              <Link
-                href="/blog"
-                className="text-muted-foreground transition-colors hover:text-foreground"
+            <nav className="hidden md:flex items-center">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-[31px] rounded-lg font-normal text-muted-foreground"
+                asChild
               >
-                Blog Home
-              </Link>
-              <Link
-                href="/blog/what-is-yoga-nidra"
-                className="text-muted-foreground transition-colors hover:text-foreground"
+                <Link href="/blog">
+                  Blog Home
+                </Link>
+              </Button>
+              <div className="mx-2 h-4 w-px bg-border" />
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-[31px] rounded-lg font-normal text-muted-foreground"
+                asChild
               >
-                Article Page
-              </Link>
+                <Link href="/blog/what-is-yoga-nidra">
+                  Article Page
+                </Link>
+              </Button>
             </nav>
 
             {/* Separator - Desktop */}
-            <div className="mx-2 hidden md:block h-4 w-px bg-border" />
+            <div className="mx-1 hidden md:block h-4 w-px bg-border" />
 
             {/* GitHub */}
             <Button variant="ghost" size="icon" className="size-8" asChild>
@@ -118,7 +127,7 @@ export function SiteHeader() {
             </Button>
 
             {/* Separator - Desktop Only */}
-            <div className="mx-1 mr-2 hidden md:block h-4 w-px bg-border" />
+            <div className="mx-1 hidden md:block h-4 w-px bg-border" />
 
             {/* Main CTA - Desktop Only */}
             <Button
