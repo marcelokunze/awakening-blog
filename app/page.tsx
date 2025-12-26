@@ -3,7 +3,6 @@ import { BlogCard } from "@/components/blog-card";
 import { getFeaturedPosts } from "@/lib/mdx";
 import { Button } from "@/components/ui/button";
 import { Code2, Search, Moon, Github, ArrowRight } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArticlePreview } from "@/components/article-preview";
 import { InstallCommand } from "@/components/install-command";
 import { PromptBox } from "@/components/prompt-box";
@@ -11,19 +10,13 @@ import { ClosingCTA } from "@/components/closing-cta";
 
 function FeatureCard({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: string }) {
   return (
-    <Card className="bg-card/50 border-border/50">
-      <CardHeader className="pb-2">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-            <Icon className="h-5 w-5 text-primary" />
-          </div>
-          <h3 className="font-semibold">{title}</h3>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground">{description}</p>
-      </CardContent>
-    </Card>
+    <div className="p-6 flex flex-col">
+      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted mb-12">
+        <Icon className="h-5 w-5 text-foreground" />
+      </div>
+      <h3 className="font-medium text-foreground mb-2">{title}</h3>
+      <p className="text-sm text-muted-foreground">{description}</p>
+    </div>
   );
 }
 
@@ -161,7 +154,7 @@ export default async function Home() {
               Everything you need for a modern blog, built with the best tools.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid md:grid-cols-3 rounded-lg border border-border overflow-hidden divide-y md:divide-y-0 md:divide-x divide-border">
             <FeatureCard
               icon={Code2}
               title="React Components in MDX"
@@ -184,15 +177,33 @@ export default async function Home() {
       <ClosingCTA />
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="container max-w-screen-xl mx-auto px-4 md:px-8 text-center text-sm text-muted-foreground">
+      <footer className="border-t border-border py-4">
+        <div className="container max-w-screen-xl mx-auto px-4 md:px-8 text-center text-sm text-muted-foreground leading-relaxed">
           Built with{" "}
+          <a href="https://mdxjs.com" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
+            MDX
+          </a>
+          ,{" "}
           <a href="https://nextjs.org" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
             Next.js
           </a>
           {" "}and{" "}
           <a href="https://ui.shadcn.com" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
             shadcn/ui
+          </a>
+          {" "}by
+          <a
+            href="https://twitter.com/marcelokunze"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground ml-2"
+          >
+            <img
+              src="/authors/marcelo-kunze.png"
+              alt="Marcelo Kunze"
+              className="h-5 w-5 rounded-full inline-block align-text-bottom mr-1"
+            />
+            marcelokunze
           </a>
         </div>
       </footer>
