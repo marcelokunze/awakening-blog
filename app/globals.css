@@ -27,6 +27,8 @@
     --input: 220 13% 91%;
     --ring: 225 51% 34% / 0.5;
     --radius: 0.5rem;
+    --body-blog: 215 13.8% 34.1%;
+    --heading-blog: 215 27.9% 16.9%;
   }
 
   .dark {
@@ -50,6 +52,8 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 225 51% 66% / 0.5;
+    --body-blog: 217.9 10.6% 75%;
+    --heading-blog: 220 13% 91%;
   }
 }
 
@@ -60,5 +64,15 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

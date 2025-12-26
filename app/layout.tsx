@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { SiteHeader } from "@/components/site-header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,23 +11,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://example.com'),
+  metadataBase: new URL('https://awakening-blog.com'),
   title: {
-    default: 'MDX Blog',
-    template: '%s | MDX Blog'
+    default: 'Awakening Blog',
+    template: '%s | Awakening Blog'
   },
-  description: 'A beautiful MDX blog with shadcn/ui components.',
+  description: 'A beautiful MDX blog template with shadcn/ui components. Install with one command.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    title: 'MDX Blog',
-    description: 'A beautiful MDX blog with shadcn/ui components.',
-    siteName: 'MDX Blog',
+    title: 'Awakening Blog',
+    description: 'A beautiful MDX blog template with shadcn/ui components. Install with one command.',
+    siteName: 'Awakening Blog',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MDX Blog',
-    description: 'A beautiful MDX blog with shadcn/ui components.',
+    title: 'Awakening Blog',
+    description: 'A beautiful MDX blog template with shadcn/ui components. Install with one command.',
   }
 }
 
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.variable}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <SiteHeader />
           {children}
         </ThemeProvider>
       </body>
