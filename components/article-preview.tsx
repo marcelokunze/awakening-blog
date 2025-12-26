@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { Monitor, Smartphone } from "lucide-react"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { cn } from "@/lib/utils"
 
 interface ArticlePreviewProps {
   slug: string
@@ -12,30 +11,20 @@ interface ArticlePreviewProps {
 export function ArticlePreview({ slug }: ArticlePreviewProps) {
   const [isDesktop, setIsDesktop] = useState(true)
 
-  // Scale factor for the iframe content
-  const scale = isDesktop ? 0.4 : 0.55
-
-  // Actual dimensions of the iframe content (before scaling)
+  // Iframe dimensions based on mode
   const iframeWidth = isDesktop ? 1400 : 390
   const iframeHeight = isDesktop ? 900 : 750
-
-  // Container dimensions (after scaling)
+  
+  // Target scale and dimensions
+  const scale = isDesktop ? 0.4 : 0.46
   const containerWidth = iframeWidth * scale
-  const containerHeight = iframeHeight * scale
-
-  // Max width for the container (larger for desktop, smaller for mobile screens)
-  const maxWidth = isDesktop ? 560 : 340
-
-  // Actual rendered width
-  const renderedWidth = Math.min(containerWidth, maxWidth)
-  const scaleFactor = renderedWidth / containerWidth
-  const renderedHeight = containerHeight * scaleFactor
-
+  const contentHeight = iframeHeight * scale
+  
   // Chrome bar height
-  const chromeHeight = isDesktop ? 24 : 20
+  const chromeHeight = isDesktop ? 28 : 20
 
   return (
-    <div className="flex flex-col items-center gap-4 w-full max-w-full">
+    <div className="flex flex-col items-center gap-4 w-full max-w-full overflow-hidden">
       {/* Aspect Ratio Toggle */}
       <Tabs
         defaultValue="desktop"
@@ -53,20 +42,17 @@ export function ArticlePreview({ slug }: ArticlePreviewProps) {
         </TabsList>
       </Tabs>
 
-      {/* Preview Container */}
+      {/* Preview Container - uses CSS for responsive behavior */}
       <div
-        className={cn(
-          "relative rounded-md border border-border bg-background shadow-2xl overflow-hidden transition-all duration-500 ease-in-out",
-          "max-w-full"
-        )}
+        className="relative rounded-md border border-border bg-background shadow-2xl overflow-hidden transition-all duration-500 ease-in-out w-full"
         style={{
-          width: renderedWidth,
-          height: renderedHeight + chromeHeight,
+          maxWidth: containerWidth,
+          aspectRatio: `${containerWidth} / ${contentHeight + chromeHeight}`,
         }}
       >
         {/* Browser Chrome (Desktop) / Notch (Mobile) */}
         {isDesktop ? (
-          <div className="flex items-center gap-2 px-3 py-3 border-b border-border bg-muted/50">
+          <div className="flex items-center gap-2 px-3 py-2 border-b border-border bg-muted/50">
             <div className="flex gap-1.5">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
@@ -74,27 +60,20 @@ export function ArticlePreview({ slug }: ArticlePreviewProps) {
             </div>
           </div>
         ) : (
-          <div className="flex justify-center py-1 bg-muted/30">
+          <div className="flex justify-center items-center py-1 bg-muted/30">
             <div className="w-12 h-3 rounded-full bg-foreground/10" />
           </div>
         )}
 
-        {/* Iframe Container */}
-        <div
-          className="relative overflow-hidden"
-          style={{
-            width: renderedWidth,
-            height: renderedHeight,
-          }}
-        >
+        {/* Iframe Container - scales with container via CSS */}
+        <div className="absolute inset-0 top-[28px] overflow-hidden">
           <iframe
             src={`/blog/${slug}`}
-            className="absolute top-0 left-0 border-0"
+            className="absolute top-0 left-0 border-0 origin-top-left w-full h-full"
             style={{
-              width: iframeWidth,
-              height: iframeHeight,
-              transform: `scale(${renderedWidth / iframeWidth})`,
-              transformOrigin: "top left",
+              width: `${100 / scale}%`,
+              height: `${100 / scale}%`,
+              transform: `scale(${scale})`,
             }}
             title="Blog Preview"
           />

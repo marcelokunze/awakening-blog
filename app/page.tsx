@@ -24,10 +24,10 @@ export default async function Home() {
   const featuredPosts = await getFeaturedPosts();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
       <section className="container max-w-screen-xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center lg:min-h-[550px]">
           {/* Left Column - Text Content */}
           <div className="space-y-6 text-center lg:text-left">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
@@ -58,7 +58,7 @@ export default async function Home() {
           </div>
 
           {/* Right Column - Article Preview */}
-          <div className="flex justify-center">
+          <div className="flex justify-center w-full">
             <ArticlePreview slug="what-is-yoga-nidra" />
           </div>
         </div>
@@ -157,7 +157,7 @@ export default async function Home() {
           <div className="grid md:grid-cols-3 rounded-lg border border-border overflow-hidden divide-y md:divide-y-0 md:divide-x divide-border">
             <FeatureCard
               icon={Code2}
-              title="React Components in MDX"
+              title="Inject custom shadcn components"
               description="Write your posts in MDX and embed any React or shadcn/ui component directly in your content."
             />
             <FeatureCard

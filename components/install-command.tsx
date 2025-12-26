@@ -54,8 +54,8 @@ export function InstallCommand() {
           </div>
           {(Object.keys(commands) as PackageManager[]).map((pm) => (
             <TabsContent key={pm} value={pm} className="m-0">
-              <div className="p-4 font-mono text-sm font-light">
-                <code className="text-foreground font-regular tracking-widebreak-all">
+              <div className="p-4 font-mono text-sm font-light overflow-x-auto">
+                <code className="text-foreground break-all">
                   {commands[pm]}
                 </code>
               </div>
