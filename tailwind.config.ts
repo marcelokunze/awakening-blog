@@ -18,7 +18,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['var(--font-sans)']
+				sans: ['var(--font-sans)'],
+				mono: ['var(--font-mono)']
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
