@@ -156,7 +156,7 @@ export default async function Home() {
           <div className="grid md:grid-cols-3 rounded-lg border border-border overflow-hidden divide-y md:divide-y-0 md:divide-x divide-border">
             <FeatureCard
               icon={Code2}
-              title="Inject custom shadcn components"
+              title="Inject components"
               description="Write your posts in MDX and embed any React or shadcn/ui component directly in your content."
             />
             <FeatureCard
@@ -167,7 +167,7 @@ export default async function Home() {
             <FeatureCard
               icon={Moon}
               title="Dark & Light Mode"
-              description="Beautiful dark and light themes that respect user preferences with smooth transitions."
+              description="Full support for dark and light mode."
             />
           </div>
         </div>

@@ -105,3 +105,6 @@ export async function getFeaturedPosts(): Promise<PostMeta[]> {
   return allPosts.slice(0, 2)
 }
 
+
+
+
