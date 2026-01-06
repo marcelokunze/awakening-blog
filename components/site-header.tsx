@@ -43,23 +43,23 @@ export function SiteHeader() {
           <Link href="/" className="flex items-center">
             {/* Desktop - Full Logo */}
             <img
-              src="/awaken-blog-light.svg"
+              src="/awakening-blog-light.svg"
               alt="Awakening Blog"
               className="hidden md:block dark:hidden h-9"
             />
             <img
-              src="/awaken-blog-dark.svg"
+              src="/awakening-blog-dark.svg"
               alt="Awakening Blog"
               className="hidden md:dark:block h-9"
             />
             {/* Mobile - Icon Only */}
             <img
-              src="/awaken-blog-icon-light.svg"
+              src="/awakening-blog-icon-light.svg"
               alt="Awakening Blog"
               className="block md:hidden dark:hidden h-6"
             />
             <img
-              src="/awaken-blog-icon-dark.svg"
+              src="/awakening-blog-icon-dark.svg"
               alt="Awakening Blog"
               className="hidden dark:block md:dark:hidden h-6"
             />
@@ -151,12 +151,12 @@ export function SiteHeader() {
                   {/* Logo */}
                   <div className="mb-8">
                     <img
-                      src="/awaken-blog-light.svg"
+                      src="/awakening-blog-light.svg"
                       alt="Awakening Blog"
                       className="dark:hidden h-10"
                     />
                     <img
-                      src="/awaken-blog-dark.svg"
+                      src="/awakening-blog-dark.svg"
                       alt="Awakening Blog"
                       className="hidden dark:block h-10"
                     />
