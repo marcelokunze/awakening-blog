@@ -200,7 +200,7 @@ export default async function Home() {
             <img
               src="/authors/marcelo-kunze.png"
               alt="Marcelo Kunze"
-              className="h-5 w-5 rounded-full inline-block align-text-bottom mr-1"
+              className="h-5 w-5 rounded-full inline-block align-middle mr-1"
             />
             marcelokunze
           </a>
