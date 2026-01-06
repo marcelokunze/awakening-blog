@@ -72,7 +72,7 @@ export function SiteHeader() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-[31px] rounded-lg font-normal text-muted-foreground"
+                className="h-[31px] rounded-lg font-normal"
                 asChild
               >
                 <Link href="/blog">
@@ -83,7 +83,7 @@ export function SiteHeader() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-[31px] rounded-lg font-normal text-muted-foreground"
+                className="h-[31px] rounded-lg font-normal"
                 asChild
               >
                 <Link href="/blog/what-is-yoga-nidra">
