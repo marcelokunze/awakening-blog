@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 
 const PromoCard = () => {
  return (
-   <Card className="mx-4 my-6 md:my-12 md:mx-auto md:max-w-6xl overflow-hidden border-white shadow-lg rounded-lg">
+   <Card className="mx-4 my-6 md:my-12 md:mx-auto md:max-w-6xl overflow-hidden border-white rounded-lg">
      <CardContent className="p-6 md:p-12">
        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8">
          <div
