@@ -3,6 +3,7 @@
 import { Copy, Check, MessageSquare } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
 
 const prompt = `I just installed an MDX blog using shadcn registry. Please help me complete the setup:
 
@@ -27,6 +28,7 @@ export function PromptBox() {
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(prompt)
     setCopied(true)
+    toast.success("Prompt copied to clipboard")
     setTimeout(() => setCopied(false), 2000)
   }
 
@@ -45,7 +47,7 @@ export function PromptBox() {
             onClick={copyToClipboard}
           >
             {copied ? (
-              <Check className="h-4 w-4 text-green-500" />
+              <Check className="h-4 w-4 text-green-600 dark:text-green-500" />
             ) : (
               <Copy className="h-4 w-4 text-foreground" />
             )}

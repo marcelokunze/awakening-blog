@@ -4,6 +4,7 @@ import { Copy, Check, Terminal } from "lucide-react"
 import { useState } from "react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
 
 const commands = {
   pnpm: "pnpm dlx shadcn@latest add https://awakening-blog.com/r/blog.json",
@@ -21,6 +22,7 @@ export function InstallCommand() {
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(commands[activeTab])
     setCopied(true)
+    toast.success("Install command copied to clipboard")
     setTimeout(() => setCopied(false), 2000)
   }
 
@@ -46,7 +48,7 @@ export function InstallCommand() {
               onClick={copyToClipboard}
             >
               {copied ? (
-                <Check className="h-4 w-4 text-green-500" />
+                <Check className="h-4 w-4 text-green-600 dark:text-green-500" />
               ) : (
                 <Copy className="h-4 w-4 text-foreground" />
               )}
