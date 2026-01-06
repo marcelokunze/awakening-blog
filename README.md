@@ -2,7 +2,7 @@
 
 A beautiful, feature-rich MDX blog built with Next.js 15 and shadcn/ui. Features automatic table of contents with scroll spy, category badges, dark mode support, and SEO-ready schema markup.
 
-[Example Article](https://awakening-blog.com/blog/what-is-yoga-nidra).
+[Example Article](https://awakening-blog.com/blog/what-is-yoga-nidra)
 
 ## Features
 
@@ -13,7 +13,8 @@ A beautiful, feature-rich MDX blog built with Next.js 15 and shadcn/ui. Features
 - 📑 **Table of Contents** - Generated from headings with scroll spy
 - 🏷️ **Category Badges** - Customizable colored badges
 - 🌙 **Dark Mode** - Full dark/light mode support
-- 🌙 **Additional Components** - Promo cards below the table of contents and after the article (More coming soon).
+- 🧩 **Additional Components** - Promo cards below the table of contents and after the article (More coming soon)
+
 
 ## Installation
 
@@ -92,7 +93,11 @@ plugins: [
 
 ## Writing Posts
 
-Create MDX files in the `/posts` directory:
+Create markdown MDX files in the `/posts` directory.
+
+The filename (without the `.mdx` extension) will be used as the slug for the page URL.
+
+Structure the file like this:
 
 ```mdx
 ---
@@ -118,6 +123,8 @@ More content with **bold**, *italic*, and [links](https://example.com).
 
 The table of contents automatically picks up h2, h3, and h4 headings!
 ```
+
+[Learn more](https://www.markdownguide.org/basic-syntax/) about writing markdown.
 
 ### Frontmatter Fields
 
