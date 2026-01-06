@@ -89,7 +89,7 @@ export default async function Post({ params }: PageProps) {
 
             {/* Desktop ToC */}
             <aside className="hidden lg:block w-64">
-              <div className="sticky top-8">
+              <div className="sticky top-20">
                 <h2 className="text-xs font-semibold mb-4 tracking-widest text-foreground/80">TABLE OF CONTENTS</h2>
                 <TableOfContents items={post.tableOfContents || []} />
               </div>
