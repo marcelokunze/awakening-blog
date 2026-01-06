@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Monitor, Smartphone } from "lucide-react"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface ArticlePreviewProps {
@@ -31,13 +30,11 @@ export function ArticlePreview({ slug }: ArticlePreviewProps) {
         onValueChange={(value) => setIsDesktop(value === "desktop")}
       >
         <TabsList>
-          <TabsTrigger value="desktop" className="gap-2">
-            <Monitor className="h-4 w-4" />
-            <span className="hidden sm:inline">Desktop</span>
+          <TabsTrigger value="desktop">
+            Desktop
           </TabsTrigger>
-          <TabsTrigger value="mobile" className="gap-2">
-            <Smartphone className="h-4 w-4" />
-            <span className="hidden sm:inline">Mobile</span>
+          <TabsTrigger value="mobile">
+            Mobile
           </TabsTrigger>
         </TabsList>
       </Tabs>
