@@ -17,8 +17,6 @@ A beautiful, feature-rich MDX blog built with Next.js 15 and shadcn/ui. Features
 
 ## Installation
 
-### Option 1: Add to Existing Project (Recommended)
-
 If you already have a Next.js project with shadcn/ui set up, install with a single command:
 
 ```bash
@@ -91,17 +89,6 @@ plugins: [
 3. Add your first `.mdx` post (see [Writing Posts](#writing-posts))
 
 4. Visit `/blog` to see your posts
-
-### Option 2: Use as a Template
-
-Click "Use this template" on GitHub to create your own repository.
-
-```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO
-cd YOUR_REPO
-npm install
-npm run dev
-```
 
 ## Writing Posts
 
@@ -219,7 +206,7 @@ MIT License - feel free to use this for any project!
 ## Credits
 
 Built with:
+- [MDX](https://mdxjs.com/)
 - [Next.js](https://nextjs.org)
 - [shadcn/ui](https://ui.shadcn.com)
 - [Tailwind CSS](https://tailwindcss.com)
-- [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
