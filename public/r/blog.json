@@ -72,5 +72,6 @@
       "target": "components/toc-promo-card.tsx"
     }
   ],
-  "type": "registry:block"
+  "type": "registry:block",
+  "repository": "https://github.com/marcelokunze/awakening-blog"
 }
