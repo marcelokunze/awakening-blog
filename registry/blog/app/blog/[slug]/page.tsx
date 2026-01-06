@@ -5,6 +5,8 @@ import { Metadata } from 'next'
 import { TableOfContents } from '@/components/table-of-contents'
 import components from '@/lib/mdx-components'
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import PromoCard from '@/components/footer-promo-card'
+import TOCPromoCard from '@/components/toc-promo-card'
 import BlogSchema from '@/components/blog-schema'
 
 interface PageProps {
@@ -92,9 +94,17 @@ export default async function Post({ params }: PageProps) {
               <div className="sticky top-20">
                 <h2 className="text-xs font-semibold mb-4 tracking-widest text-foreground/80">TABLE OF CONTENTS</h2>
                 <TableOfContents items={post.tableOfContents || []} />
+                <div className="mt-12">
+                  <TOCPromoCard />
+                </div>
               </div>
             </aside>
           </div>
+
+          <div className="w-full max-w-6xl mt-32 mb-24">
+            <PromoCard />
+          </div>
+
         </div>
       </div>
     </>

@@ -2,15 +2,18 @@
 
 A beautiful, feature-rich MDX blog built with Next.js 15 and shadcn/ui. Features automatic table of contents with scroll spy, category badges, dark mode support, and SEO-ready schema markup.
 
+[Example Article](https://awakening-blog.com/blog/what-is-yoga-nidra).
+
 ## Features
 
-- 📝 **MDX Support** - Write posts in MDX
+- 📝 **MDX Support** - Write posts in MDX supporting markdown and rich text
 - 🎛 **React & Shadcn Components** - Inject custom components into your articles
 - 🔍 **SEO Optimized** - Schema.org markup and meta tags
-- 🌙 **Dark Mode** - Full dark/light mode support
 - 📱 **Responsive** - Mobile-first design
 - 📑 **Table of Contents** - Generated from headings with scroll spy
 - 🏷️ **Category Badges** - Customizable colored badges
+- 🌙 **Dark Mode** - Full dark/light mode support
+- 🌙 **Additional Components** - Promo cards below the table of contents and after the article (More coming soon).
 
 ## Installation
 
@@ -46,6 +49,8 @@ npx shadcn@latest add https://awakening-blog.com/r/blog.json
 | `components/blog-card.tsx` | Post preview cards |
 | `components/category-badge.tsx` | Category badges |
 | `components/blog-schema.tsx` | SEO schema markup |
+| `components/footer-promo-card.tsx` | Promo card displayed after article content |
+| `components/toc-promo-card.tsx` | Promo card displayed in table of contents sidebar |
 
 ### After Installation
 

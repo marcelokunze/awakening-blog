@@ -56,6 +56,16 @@
           "path": "registry/blog/components/blog-schema.tsx",
           "type": "registry:component",
           "target": "components/blog-schema.tsx"
+        },
+        {
+          "path": "registry/blog/components/footer-promo-card.tsx",
+          "type": "registry:component",
+          "target": "components/footer-promo-card.tsx"
+        },
+        {
+          "path": "registry/blog/components/toc-promo-card.tsx",
+          "type": "registry:component",
+          "target": "components/toc-promo-card.tsx"
         }
       ]
     }
