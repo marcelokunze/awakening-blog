@@ -9,10 +9,3 @@ export default function BlogLayout({
     </div>
   )
 }
-
-
-
-
-
-
-

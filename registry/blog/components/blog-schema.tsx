@@ -37,10 +37,3 @@ export default function BlogSchema({
     />
   )
 }
-
-
-
-
-
-
-
