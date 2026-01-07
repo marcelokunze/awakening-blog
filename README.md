@@ -58,7 +58,7 @@ After running the install command, copy and paste this prompt to your AI assista
 ```
 I just installed an MDX blog using shadcn registry. Please help me complete the setup:
 
-1. Add `require("@tailwindcss/typography")` to the plugins array in my tailwind.config.ts
+1. Add `@plugin "@tailwindcss/typography";` to your `globals.css` file (after the `@import "tailwindcss";` line)
 
 2. Create a `posts/` folder in my project root
 
@@ -74,15 +74,12 @@ I just installed an MDX blog using shadcn registry. Please help me complete the 
 4. Add a "Blog" link to my navbar that links to /blog
 ```
 
-### Or mannually follow these steps
+### Or manually follow these steps
 
-1. Add the typography plugin to your `tailwind.config.ts`:
+1. Add the typography plugin to your `globals.css` file (after the `@import "tailwindcss";` line):
 
-```typescript
-plugins: [
-  require("@tailwindcss/typography"),
-  // ...other plugins
-],
+```css
+@plugin "@tailwindcss/typography";
 ```
 
 2. Create a `posts/` directory in your project root

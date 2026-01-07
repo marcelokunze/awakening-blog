@@ -7,7 +7,7 @@ import { toast } from "sonner"
 
 const prompt = `I just installed an MDX blog using shadcn registry. Please help me complete the setup:
 
-1. Add \`require("@tailwindcss/typography")\` to the plugins array in my tailwind.config.ts
+1. Add \`@plugin "@tailwindcss/typography";\` to your \`globals.css\` file (after the \`@import "tailwindcss";\` line)
 
 2. Create a \`posts/\` folder in my project root
 
